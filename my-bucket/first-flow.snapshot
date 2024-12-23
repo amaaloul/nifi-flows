@@ -23,8 +23,8 @@
         "name" : "aaaa",
         "outputPorts" : [ ],
         "position" : {
-          "x" : 445.0,
-          "y" : 114.0
+          "x" : 544.0,
+          "y" : 64.0
         },
         "processGroups" : [ ],
         "processors" : [ {
@@ -116,6 +116,57 @@
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
           "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "backoffMechanism" : "PENALIZE_FLOWFILE",
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-parquet-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.27.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "304b8210-5ceb-3b08-9ce4-02e680aec0cc",
+          "identifier" : "855f2cbe-8872-336e-84b9-a449aff3bcb8",
+          "instanceIdentifier" : "f43da3dd-0193-1000-802e-63811cbd707a",
+          "maxBackoffPeriod" : "10 mins",
+          "name" : "CalculateParquetOffsets",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 426.0,
+            "y" : 128.0
+          },
+          "properties" : {
+            "Zero Content Output" : "false"
+          },
+          "propertyDescriptors" : {
+            "Records Per Split" : {
+              "displayName" : "Records Per Split",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Records Per Split",
+              "sensitive" : false
+            },
+            "Zero Content Output" : {
+              "displayName" : "Zero Content Output",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Zero Content Output",
+              "sensitive" : false
+            }
+          },
+          "retriedRelationships" : [ ],
+          "retryCount" : 10,
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.parquet.CalculateParquetOffsets",
           "yieldDuration" : "1 sec"
         } ],
         "remoteProcessGroups" : [ ]
